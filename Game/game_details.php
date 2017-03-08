@@ -1,5 +1,5 @@
 <?php
-include_once('database.php'); // include the database connection file
+include_once('../Config/database.php'); // include the database connection file
 
 $gameID = $_GET["gameID"]; // assigns the gameID from the URL
 
@@ -23,10 +23,10 @@ $statement->closeCursor(); // close the connection
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Game Details</title>
     <!-- CSS Section -->
-    <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="./Content/app.css">
+    <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../Scripts/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../Content/app.css">
 </head>
 <body>
 
@@ -60,9 +60,9 @@ $statement->closeCursor(); // close the connection
 
 
 <!-- JavaScript Section -->
-<script src="./Scripts/lib/jquery/dist/jquery.min.js"></script>
-<script src="./Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./Scripts/app.js"></script>
+<script src="../Scripts/lib/jquery/dist/jquery.min.js"></script>
+<script src="../Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../Scripts/app.js"></script>
 </body>
 </html>
 

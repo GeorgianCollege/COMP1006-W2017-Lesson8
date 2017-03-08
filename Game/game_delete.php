@@ -1,5 +1,5 @@
 <?php
-include_once('database.php');
+include_once('../Config/database.php');
 
 $gameID = $_GET["gameID"]; // assigns the gameID from the URL
 
@@ -12,6 +12,6 @@ if($gameID != false) {
 }
 
 // redirect to index page
-header('Location: index.php');
+header('Location: ../index.php');
 
 ?>

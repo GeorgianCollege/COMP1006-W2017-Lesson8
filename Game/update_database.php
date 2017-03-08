@@ -1,5 +1,5 @@
 <?php
-include_once('database.php');
+include_once('../Config/database.php');
 
 $isAddition = filter_input(INPUT_POST, "isAddition");
 $gameName = filter_input(INPUT_POST, "NameTextField"); //$_POST["NameTextField"];
@@ -23,5 +23,5 @@ $statement->execute(); // run on the db server
 $statement->closeCursor(); // close the connection
 
 // redirect to index page
-header('Location: index.php');
+header('Location: ../index.php');
 ?>
