@@ -1,6 +1,6 @@
 <?php
+include_once('../Users/is_authenticated.php');
 include_once('../Config/database.php');
-
 $gameID = $_GET["gameID"]; // assigns the gameID from the URL
 
 if($gameID != false) {

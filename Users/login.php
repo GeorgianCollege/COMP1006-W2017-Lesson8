@@ -1,6 +1,41 @@
 <?php
 
-$messages = "";
+if(isset($_POST["username"])){
+    include_once('../Config/database.php');
+    try{
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $query = "SELECT id FROM users 
+                  WHERE username = :username AND password = :password"; // SQL statement
+        $statement = $db->prepare($query); // encapsulate the sql statement
+        $statement->bindValue(':username', $username);
+        $statement->bindValue(':password', $password);
+        $statement->execute(); // run on the db server
+        if($statement->rowCount() == 1) {
+            $statement->closeCursor(); // close the connection
+
+            $_SESSION["is_logged_in"] = true;
+            // if everything good go to index page
+            header('Location: ../index.php');
+        }
+        else {
+            $statement->closeCursor(); // close the connection
+            $messages = "Invalid Username or Password";
+        }
+
+
+
+    }
+    catch(Exception $e) {
+        $messages = $e->getMessage();
+    }
+
+}
+else {
+    $messages = "";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +58,7 @@ $messages = "";
       <div class="row">
         <div class="col-md-offset-4 col-md-4">
            <h1>Please Login</h1>
-           <form method="post">
+           <form method="post" action="login.php">
                 <fieldset class="form-group">
                     <label>Username:</label>
                     <input type="text" class="form-control" name="username" required autofocus/>

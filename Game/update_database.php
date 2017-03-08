@@ -1,4 +1,5 @@
 <?php
+include_once('../Users/is_authenticated.php');
 include_once('../Config/database.php');
 
 $isAddition = filter_input(INPUT_POST, "isAddition");
